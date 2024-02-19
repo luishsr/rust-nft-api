@@ -36,8 +36,6 @@ Run your IPFS node to handle off-chain metadata storage. If using IPFS Desktop, 
 
 Edit the `.env` file in the project's root directory to set the necessary environment variables:
 
-envCopy code
-
 `ETH_NODE_URL=http://localhost:8545
 CONTRACT_ABI_PATH=./MyNFT.json
 MOCK_PRIVATE_KEY=69440d76b64f2418574043fbd79f3d4f56c293290c3056fc18b62b12013db7e7 # This is a placeholder for testing
