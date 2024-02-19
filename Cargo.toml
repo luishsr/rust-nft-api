@@ -1,0 +1,27 @@
+[package]
+name = "rust-nft-api"
+version = "0.1.0"
+edition = "2021"
+description = "A Simple Rust NFT API + Smart Contract"
+authors = ["Luis Soares <soaresluispt@gmail.com>"]
+repository = "https://github.com/luishsr/rust-nft-api"
+license = "MIT"
+readme = "README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+hex = "0.4"
+web3 = "0.19.0"
+tokio = { version= "1", features = ["full"] }
+dotenvy = "0.15.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0.98"
+axum = { version = "0.5.0", features = ["headers", "multipart"]}
+reqwest = { version = "0.11.24", features = ["multipart", "json"]}
+tower-http = { version = "0.3.0", features = ["cors", "full"] }
+secp256k1 = "0.28.2"
+sha3 = "0.10.0"
+thiserror = "1.0"
+tower = "0.4.13"
+utoipa = "0.1.2"
