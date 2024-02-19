@@ -1,49 +1,54 @@
-`# Rust NFT API
+Rust NFT API
+============
 
-## Purpose
+Purpose
+-------
 
-Rust NFT API is a simple RESTful API built with Rust that enables creating, retrieving, and listing Non-Fungible Tokens (NFTs) on the Ethereum blockchain, along with managing their off-chain metadata.
+Rust NFT API is a simple RESTful API developed in Rust that offers functionalities for creating, retrieving, and listing Non-Fungible Tokens (NFTs) on the Ethereum blockchain, along with managing their off-chain metadata.
 
-## Requirements
+Requirements
+------------
 
-To use Rust NFT API, you'll need the following:
+Before setting up the Rust NFT API, ensure you have the following components ready:
 
-1. An Ethereum node for testing (e.g., [Ganache](https://www.trufflesuite.com/ganache))
-2. [IPFS Desktop](https://github.com/ipfs/ipfs-desktop) for local IPFS node simulation
-3. [Remix IDE](https://remix.ethereum.org/) or another tool for deploying the Smart Contract
+1.  Ethereum Node: An Ethereum test node, such as Ganache, for local blockchain simulation.
+2.  IPFS: IPFS Desktop or similar for off-chain data storage, to test locally.
+3.  Smart Contract Deployment Tool: Remix IDE or another tool for deploying the Smart Contract to the Ethereum blockchain.
 
-## Setup
+Setup
+-----
 
-Follow these steps to set up and run Rust NFT API:
+Follow these steps to set up and run the Rust NFT API:
 
-### 1. Start Ganache
+### 1\. Start Ganache
 
-Launch Ganache to create a local Ethereum blockchain instance.
+Launch Ganache to initiate a local Ethereum blockchain node.
 
-### 2. Deploy the Smart Contract
+### 2\. Deploy the Smart Contract
 
-Use Remix IDE or your preferred tool to deploy the Smart Contract using the `MyNFT.sol` file located in the `contract` folder.
+Using Remix IDE or your preferred tool, deploy the `MyNFT.sol` smart contract located in the `contract` folder of this project.
 
-### 3. Start the IPFS Node
+### 3\. Start the IPFS Node
 
-Open IPFS Desktop or your preferred IPFS client to start an IPFS node.
+Run your IPFS node to handle off-chain metadata storage. If using IPFS Desktop, simply open the application.
 
-### 4. Configure Environment Variables
+### 4\. Configure Environment Variables
 
-Edit the `.env` file in the project root folder and set the following environment variables:
+Edit the `.env` file in the project's root directory to set the necessary environment variables:
 
-```env
-ETH_NODE_URL=http://localhost:8545
+envCopy code
+
+`ETH_NODE_URL=http://localhost:8545
 CONTRACT_ABI_PATH=./MyNFT.json
-MOCK_PRIVATE_KEY=69440d76b64f2418574043fbd79f3d4f56c293290c3056fc18b62b12013db7e7 # This is a fake key for testing
+MOCK_PRIVATE_KEY=69440d76b64f2418574043fbd79f3d4f56c293290c3056fc18b62b12013db7e7 # This is a placeholder for testing
 
 TEST_OWNER_ADDRESS=<Your Token Owner account address from Ganache>
-TEST_TOKEN_ID=1 # Keep it as 1 by default
-TEST_CONTRACT_ADDRESS=<Your deployed Smart Contract address> `
+TEST_TOKEN_ID=1 # Default to 1
+TEST_CONTRACT_ADDRESS=<Your deployed Smart Contract address>`
 
 ### 5\. Build the Project
 
-Run the following command to build the project:
+Compile the project using Cargo:
 
 bashCopy code
 
@@ -51,34 +56,31 @@ bashCopy code
 
 ### 6\. Run Tests
 
-Ensure your setup is correct by running:
+Execute the project's test suite to verify the setup:
 
 bashCopy code
 
 `cargo test`
 
-If the tests fail, double-check your setup based on the previous steps.
+If any tests fail, revisit the previous setup steps to troubleshoot.
 
 ### 7\. Run the Application
 
-Once the tests pass, you can run the application by providing the deployed smart contract address as a command-line argument (the same address specified in the `TEST_CONTRACT_ADDRESS` environment variable). This allows for easy switching of smart contracts without needing to rebuild.
-
-### 8\. Interact with the API
-
-After starting the application, you can interact with the API by navigating to:
+Start the Rust NFT API server by providing the deployed smart contract's address as a command-line argument (matching the `TEST_CONTRACT_ADDRESS` in `.env`):
 
 bashCopy code
 
-`http://localhost:3010/swagger-ui`
+`cargo run -- <Deployed_Smart_Contract_Address>`
 
-Alternatively, you can use your preferred tool to call the API endpoints.
+### 8\. Interact with the API
 
-Contributing
-------------
+Access the Swagger UI at <http://localhost:3010/swagger-ui> to interact with the API through a graphical interface or use your preferred tool to call the API endpoints directly.
 
-Contributions are welcome! Please feel free to submit pull requests or open issues to discuss proposed changes or enhancements.
+* * * * *
 
-License
--------
+Additional Notes
+----------------
 
-This project is licensed under the MIT License - see the [LICENSE](https://chat.openai.com/c/LICENSE) file for details.
+-   Ensure Ganache and the IPFS node are running before starting the Rust NFT API server.
+-   The `MOCK_PRIVATE_KEY` provided in the `.env` example is for demonstration purposes only. Never use real private keys in your development environment or commit them to version control.
+-   For any issues or contributions, feel free to open an issue or a pull request in the repository.
