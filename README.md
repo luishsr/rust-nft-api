@@ -1,6 +1,12 @@
 Rust NFT API
 ============
 
+![image](https://github.com/luishsr/rust-nft-api/assets/80909424/a47a26b8-a1d8-4070-9b3d-2a014cc87916)
+![image](https://github.com/luishsr/rust-nft-api/assets/80909424/fc0fa1cf-59c5-4973-ba7f-602327178aad)
+![image](https://github.com/luishsr/rust-nft-api/assets/80909424/15ca472d-6bf0-4398-9ee1-dd3cae8599f2)
+![image](https://github.com/luishsr/rust-nft-api/assets/80909424/def2332b-539f-42f2-9a4a-6b154652f4f7)
+
+
 Purpose
 -------
 
